@@ -1,0 +1,9 @@
+apiVersion: comcast.github.io.comcast.github.io/v1
+kind: KuberhealthyState
+metadata:
+  labels:
+    app.kubernetes.io/name: crds
+    app.kubernetes.io/managed-by: kustomize
+  name: kuberhealthystate-sample
+spec:
+  # TODO(user): Add fields here

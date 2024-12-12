@@ -20,4 +20,22 @@ resources:
   kind: KuberhealthyCheck
   path: github.com/kuberhealthy/crds/api/v1
   version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: comcast.github.io
+  group: comcast.github.io
+  kind: KuberhealthyJob
+  path: github.com/kuberhealthy/crds/api/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: comcast.github.io
+  group: comcast.github.io
+  kind: KuberhealthyState
+  path: github.com/kuberhealthy/crds/api/v1
+  version: v1
 version: "3"
