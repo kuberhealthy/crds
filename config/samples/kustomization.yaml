@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- comcast.github.io_v1_kuberhealthycheck.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples
