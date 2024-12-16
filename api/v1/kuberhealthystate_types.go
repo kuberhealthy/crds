@@ -24,13 +24,32 @@ import (
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
 // KuberhealthyStateSpec defines the desired state of KuberhealthyState
+// Important: Run "make" to regenerate code after modifying this file
 type KuberhealthyStateSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of KuberhealthyState. Edit kuberhealthystate_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	OK          bool     `json:"OK" yaml:"OK"`                   // true or false status of the khWorkload, whether or not it completed successfully
+	Errors      []string `json:"Errors" yaml:"Errors"`           // the list of errors reported from the khWorkload run
+	RunDuration string   `json:"RunDuration" yaml:"RunDuration"` // the time it took for the khWorkload to complete
+	Namespace   string   `json:"Namespace" yaml:"Namespace"`     // the namespace the khWorkload was run in
+	Node        string   `json:"Node" yaml:"Node"`               // the node the khWorkload ran on
+	// +nullable
+	LastRun          *metav1.Time `json:"LastRun,omitempty" yaml:"LastRun,omitempty"` // the time the khWorkload was last run
+	AuthoritativePod string       `json:"AuthoritativePod" yaml:"AuthoritativePod"`   // the main kuberhealthy pod creating and updating the khstate
+	CurrentUUID      string       `json:"uuid" yaml:"uuid"`                           // the UUID that is authorized to report statuses into the kuberhealthy endpoint
+	// +nullable
+	khWorkload *KHWorkload `json:"khWorkload,omitempty" yaml:"khWorkload,omitempty"`
 }
+
+// KHWorkload is used to describe the different types of kuberhealthy workloads: KhCheck or KHJob
+type KHWorkload string
+
+// Two types of KHWorkloads are available: Kuberhealthy Check or Kuberhealthy Job
+// KHChecks run on a scheduled run interval
+// KHJobs run once
+const (
+	KHCheck KHWorkload = "KHCheck"
+	KHJob   KHWorkload = "KHJob"
+)
+
 
 // KuberhealthyStateStatus defines the observed state of KuberhealthyState
 type KuberhealthyStateStatus struct {
@@ -42,6 +61,13 @@ type KuberhealthyStateStatus struct {
 // +kubebuilder:subresource:status
 
 // KuberhealthyState is the Schema for the kuberhealthystates API
+// +k8s:openapi-gen=true
+// +kubebuilder:printcolumn:name="OK",type=string,JSONPath=`.spec.OK`,description="OK status"
+// +kubebuilder:printcolumn:name="Age LastRun",type=date,JSONPath=`.spec.LastRun`,description="Last Run"
+// +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`,description="Age"
+// +kubebuilder:resource:path="khstates"
+// +kubebuilder:resource:singular="khstate"
+// +kubebuilder:resource:shortName="khs"
 type KuberhealthyState struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
