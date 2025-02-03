@@ -22,8 +22,6 @@ resources:
 # default, aiding admins in cluster management. Those roles are
 # not used by the Project itself. You can comment the following lines
 # if you do not want those helpers be installed with your Project.
-- kuberhealthystate_editor_role.yaml
-- kuberhealthystate_viewer_role.yaml
 - kuberhealthyjob_editor_role.yaml
 - kuberhealthyjob_viewer_role.yaml
 - kuberhealthycheck_editor_role.yaml

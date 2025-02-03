@@ -1,84 +1,11 @@
----
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
+  labels:
+    app.kubernetes.io/name: crds
+    app.kubernetes.io/managed-by: kustomize
   name: manager-role
 rules:
-- apiGroups:
-  - comcast.github.io.comcast.github.io
-  resources:
-  - kuberhealthychecks
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - comcast.github.io.comcast.github.io
-  resources:
-  - kuberhealthychecks/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - comcast.github.io.comcast.github.io
-  resources:
-  - kuberhealthychecks/status
-  verbs:
-  - get
-  - patch
-  - update
-- apiGroups:
-  - comcast.github.io.comcast.github.io
-  resources:
-  - kuberhealthyjobs
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - comcast.github.io.comcast.github.io
-  resources:
-  - kuberhealthyjobs/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - comcast.github.io.comcast.github.io
-  resources:
-  - kuberhealthyjobs/status
-  verbs:
-  - get
-  - patch
-  - update
-- apiGroups:
-  - comcast.github.io.comcast.github.io
-  resources:
-  - kuberhealthystates
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - comcast.github.io.comcast.github.io
-  resources:
-  - kuberhealthystates/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - comcast.github.io.comcast.github.io
-  resources:
-  - kuberhealthystates/status
-  verbs:
-  - get
-  - patch
-  - update
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list", "watch"]

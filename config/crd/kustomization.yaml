@@ -2,9 +2,8 @@
 # since it depends on service name and namespace that are out of this kustomize package.
 # It should be run by config/default
 resources:
-- bases/comcast.github.io.comcast.github.io_kuberhealthychecks.yaml
-- bases/comcast.github.io.comcast.github.io_kuberhealthyjobs.yaml
-- bases/comcast.github.io.comcast.github.io_kuberhealthystates.yaml
+- bases/kuberhealthy.github.io.kuberhealthy.github.io_kuberhealthychecks.yaml
+- bases/kuberhealthy.github.io.kuberhealthy.github.io_kuberhealthyjobs.yaml
 # +kubebuilder:scaffold:crdkustomizeresource
 
 patches:
@@ -16,7 +15,6 @@ patches:
 # patches here are for enabling the CA injection for each CRD
 #- path: patches/cainjection_in_kuberhealthychecks.yaml
 #- path: patches/cainjection_in_kuberhealthyjobs.yaml
-#- path: patches/cainjection_in_kuberhealthystates.yaml
 # +kubebuilder:scaffold:crdkustomizecainjectionpatch
 
 # [WEBHOOK] To enable webhook, uncomment the following section

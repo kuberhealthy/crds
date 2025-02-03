@@ -1,5 +1,5 @@
 /*
-Copyright 2024.
+Copyright 2025 Kuberhealthy Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,10 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// Package v1 contains API Schema definitions for the comcast.github.io v1 API group
+// Package v4 contains API Schema definitions for the kuberhealthy.github.io v4 API group
 // +kubebuilder:object:generate=true
-// +groupName=comcast.github.io.comcast.github.io
-package v1
+// +groupName=kuberhealthy.github.io.kuberhealthy.github.io
+package v4
 
 import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -26,7 +26,7 @@ import (
 
 var (
 	// GroupVersion is group version used to register these objects
-	GroupVersion = schema.GroupVersion{Group: "comcast.github.io.comcast.github.io", Version: "v1"}
+	GroupVersion = schema.GroupVersion{Group: "kuberhealthy.github.io.kuberhealthy.github.io", Version: "v4"}
 
 	// SchemeBuilder is used to add go types to the GroupVersionKind scheme
 	SchemeBuilder = &scheme.Builder{GroupVersion: GroupVersion}

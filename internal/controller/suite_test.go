@@ -1,5 +1,5 @@
 /*
-Copyright 2024.
+Copyright 2025 Kuberhealthy Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import (
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	comcastgithubiov1 "github.com/kuberhealthy/crds/api/v1"
+	kuberhealthygithubiov4 "github.com/kuberhealthy/crds/api/v4"
 	// +kubebuilder:scaffold:imports
 )
 
@@ -72,7 +72,7 @@ var _ = BeforeSuite(func() {
 	Expect(err).NotTo(HaveOccurred())
 	Expect(cfg).NotTo(BeNil())
 
-	err = comcastgithubiov1.AddToScheme(scheme.Scheme)
+	err = kuberhealthygithubiov4.AddToScheme(scheme.Scheme)
 	Expect(err).NotTo(HaveOccurred())
 
 	// +kubebuilder:scaffold:scheme

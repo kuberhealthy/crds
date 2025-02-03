@@ -2,7 +2,7 @@
 # This file is used to track the info used to scaffold your project
 # and allow the plugins properly work.
 # More info: https://book.kubebuilder.io/reference/project-config.html
-domain: comcast.github.io
+domain: kuberhealthy.github.io
 layout:
 - go.kubebuilder.io/v4
 plugins:
@@ -15,27 +15,18 @@ resources:
     crdVersion: v1
     namespaced: true
   controller: true
-  domain: comcast.github.io
-  group: comcast.github.io
+  domain: kuberhealthy.github.io
+  group: kuberhealthy.github.io
   kind: KuberhealthyCheck
-  path: github.com/kuberhealthy/crds/api/v1
-  version: v1
+  path: github.com/kuberhealthy/crds/api/v4
+  version: v4
 - api:
     crdVersion: v1
     namespaced: true
   controller: true
-  domain: comcast.github.io
-  group: comcast.github.io
+  domain: kuberhealthy.github.io
+  group: kuberhealthy.github.io
   kind: KuberhealthyJob
-  path: github.com/kuberhealthy/crds/api/v1
-  version: v1
-- api:
-    crdVersion: v1
-    namespaced: true
-  controller: true
-  domain: comcast.github.io
-  group: comcast.github.io
-  kind: KuberhealthyState
-  path: github.com/kuberhealthy/crds/api/v1
-  version: v1
+  path: github.com/kuberhealthy/crds/api/v4
+  version: v4
 version: "3"

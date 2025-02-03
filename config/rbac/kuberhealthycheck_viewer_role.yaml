@@ -8,7 +8,7 @@ metadata:
   name: kuberhealthycheck-viewer-role
 rules:
 - apiGroups:
-  - comcast.github.io.comcast.github.io
+  - kuberhealthy.github.io.kuberhealthy.github.io
   resources:
   - kuberhealthychecks
   verbs:
@@ -16,7 +16,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - comcast.github.io.comcast.github.io
+  - kuberhealthy.github.io.kuberhealthy.github.io
   resources:
   - kuberhealthychecks/status
   verbs:

@@ -1,5 +1,5 @@
 /*
-Copyright 2024.
+Copyright 2025 Kuberhealthy Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,10 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package v1
+package v4
 
 import (
-	apiv1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -25,15 +24,12 @@ import (
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
 // KuberhealthyCheckSpec defines the desired state of KuberhealthyCheck
-// Important: Run "make" to regenerate code after modifying this file
 type KuberhealthyCheckSpec struct {
-	RunInterval string        `json:"runInterval" yaml:"runInterval"` // the interval at which the check runs
-	Timeout     string        `json:"timeout" yaml:"timeout"`         // the maximum time the pod is allowed to run before a failure is assumed
-	PodSpec     apiv1.PodSpec `json:"podSpec" yaml:"podSpec"`         // a spec for the external checker
-	// +optional
-	ExtraAnnotations map[string]string `json:"extraAnnotations" yaml:"extraAnnotations"` // a map of extra annotations that will be applied to the pod
-	// +optional
-	ExtraLabels map[string]string `json:"extraLabels" yaml:"extraLabels"` // a map of extra labels that will be applied to the pod
+	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
+	// Important: Run "make" to regenerate code after modifying this file
+
+	// Foo is an example field of KuberhealthyCheck. Edit kuberhealthycheck_types.go to remove/update
+	Foo string `json:"foo,omitempty"`
 }
 
 // KuberhealthyCheckStatus defines the observed state of KuberhealthyCheck
@@ -46,10 +42,6 @@ type KuberhealthyCheckStatus struct {
 // +kubebuilder:subresource:status
 
 // KuberhealthyCheck is the Schema for the kuberhealthychecks API
-// +k8s:openapi-gen=true
-// +kubebuilder:resource:path="khchecks"
-// +kubebuilder:resource:singular="khcheck"
-// +kubebuilder:resource:shortName="khc"
 type KuberhealthyCheck struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`

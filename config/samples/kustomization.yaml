@@ -1,6 +1,5 @@
 ## Append samples of your project ##
 resources:
-- comcast.github.io_v1_kuberhealthycheck.yaml
-- comcast.github.io_v1_kuberhealthyjob.yaml
-- comcast.github.io_v1_kuberhealthystate.yaml
+- kuberhealthy.github.io_v4_kuberhealthycheck.yaml
+- kuberhealthy.github.io_v4_kuberhealthyjob.yaml
 # +kubebuilder:scaffold:manifestskustomizesamples

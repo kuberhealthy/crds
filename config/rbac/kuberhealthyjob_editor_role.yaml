@@ -8,7 +8,7 @@ metadata:
   name: kuberhealthyjob-editor-role
 rules:
 - apiGroups:
-  - comcast.github.io.comcast.github.io
+  - kuberhealthy.github.io.kuberhealthy.github.io
   resources:
   - kuberhealthyjobs
   verbs:
@@ -20,7 +20,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - comcast.github.io.comcast.github.io
+  - kuberhealthy.github.io.kuberhealthy.github.io
   resources:
   - kuberhealthyjobs/status
   verbs:
