@@ -43,6 +43,7 @@ type KuberhealthyCheckStatus struct {
 	//LastRun time.Time `json:"lastRun"`
 	OK     bool     `json:"ok"`
 	Errors []string `json:"errors"`
+	CurrentMaster string `json:"currentmaster"`
 }
 
 // +kubebuilder:object:root=true
