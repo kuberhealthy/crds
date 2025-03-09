@@ -41,9 +41,11 @@ type KuberhealthyCheckStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 	//LastRun time.Time `json:"lastRun"`
-	OK     bool     `json:"ok"`
-	Errors []string `json:"errors"`
-	CurrentMaster string `json:"currentmaster"`
+	OK            bool     `json:"ok"`
+	Errors        []string `json:"errors"`
+	CurrentMaster string   `json:"currentMaster"`
+	RunDuration   string   `json:"runDuration"`
+	Namespace     string   `json:"namespace"`
 }
 
 // +kubebuilder:object:root=true

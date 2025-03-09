@@ -7911,19 +7911,28 @@ spec:
                 description: KuberhealthyCheckStatus defines the observed state of
                   KuberhealthyCheck
                 properties:
+                  currentMaster:
+                    type: string
                   errors:
                     items:
                       type: string
                     type: array
+                  namespace:
+                    type: string
                   ok:
                     description: |-
                       INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
                       Important: Run "make" to regenerate code after modifying this file
                       LastRun time.Time `json:"lastRun"`
                     type: boolean
+                  runDuration:
+                    type: string
                 required:
+                - currentMaster
                 - errors
+                - namespace
                 - ok
+                - runDuration
                 type: object
             required:
             - name
@@ -7933,19 +7942,28 @@ spec:
           status:
             description: KuberhealthyCheckStatus defines the observed state of KuberhealthyCheck
             properties:
+              currentMaster:
+                type: string
               errors:
                 items:
                   type: string
                 type: array
+              namespace:
+                type: string
               ok:
                 description: |-
                   INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
                   Important: Run "make" to regenerate code after modifying this file
                   LastRun time.Time `json:"lastRun"`
                 type: boolean
+              runDuration:
+                type: string
             required:
+            - currentMaster
             - errors
+            - namespace
             - ok
+            - runDuration
             type: object
         type: object
     served: true
