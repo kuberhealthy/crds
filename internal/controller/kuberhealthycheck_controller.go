@@ -24,7 +24,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-	kuberhealthygithubiov4 "github.com/kuberhealthy/crds/api/v4"
+	kuberhealthygithubiov2 "github.com/kuberhealthy/crds/api/v2"
 )
 
 // KuberhealthyCheckReconciler reconciles a KuberhealthyCheck object
@@ -57,6 +57,6 @@ func (r *KuberhealthyCheckReconciler) Reconcile(ctx context.Context, req ctrl.Re
 // SetupWithManager sets up the controller with the Manager.
 func (r *KuberhealthyCheckReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
-		For(&kuberhealthygithubiov4.KuberhealthyCheck{}).
+		For(&kuberhealthygithubiov2.KuberhealthyCheck{}).
 		Complete(r)
 }

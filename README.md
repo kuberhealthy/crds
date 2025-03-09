@@ -2,7 +2,7 @@
 
 This repository contains the CRD packages and the code generation for Kuberhealthy's custom resource definitions (CRDs) for Kubernetes.  This package is included in the upstream [Kuberhealthy Repository](https://github.com/kuberhealthy/kuberhealthy).
 
-- The files that define the CRDs are located in the `api/v1/` directory of this repository.
+- The files that define the CRDs are located in the `api/v2/` directory of this repository.
 - The output YAMLs for these CRDs are placed in `config/crd/bases/` after running `make`.
 - The controller code for listening for and acting on events is generated in `internal/controller/` where it is then copied to [github.com/kuberhealthy/kuberhealthy/internal/controller](github.com/kuberhealthy/kuberhealthy/internal/controller).
 
