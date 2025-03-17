@@ -46,6 +46,7 @@ type KuberhealthyCheckStatus struct {
 	CurrentMaster string   `json:"currentMaster"`
 	RunDuration   string   `json:"runDuration"`
 	Namespace     string   `json:"namespace"`
+	CurrentUUID   string   `json:"currentUUID"`
 }
 
 // +kubebuilder:object:root=true
