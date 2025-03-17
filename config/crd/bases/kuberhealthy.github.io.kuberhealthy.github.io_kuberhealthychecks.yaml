@@ -7911,25 +7911,34 @@ spec:
                 description: KuberhealthyCheckStatus defines the observed state of
                   KuberhealthyCheck
                 properties:
+                  additionalMetadata:
+                    type: string
                   currentMaster:
+                    type: string
+                  currentUUID:
                     type: string
                   errors:
                     items:
                       type: string
                     type: array
+                  lastRunUnix:
+                    format: int64
+                    type: integer
                   namespace:
                     type: string
                   ok:
                     description: |-
                       INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
                       Important: Run "make" to regenerate code after modifying this file
-                      LastRun time.Time `json:"lastRun"`
                     type: boolean
                   runDuration:
                     type: string
                 required:
+                - additionalMetadata
                 - currentMaster
+                - currentUUID
                 - errors
+                - lastRunUnix
                 - namespace
                 - ok
                 - runDuration
@@ -7942,25 +7951,34 @@ spec:
           status:
             description: KuberhealthyCheckStatus defines the observed state of KuberhealthyCheck
             properties:
+              additionalMetadata:
+                type: string
               currentMaster:
+                type: string
+              currentUUID:
                 type: string
               errors:
                 items:
                   type: string
                 type: array
+              lastRunUnix:
+                format: int64
+                type: integer
               namespace:
                 type: string
               ok:
                 description: |-
                   INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
                   Important: Run "make" to regenerate code after modifying this file
-                  LastRun time.Time `json:"lastRun"`
                 type: boolean
               runDuration:
                 type: string
             required:
+            - additionalMetadata
             - currentMaster
+            - currentUUID
             - errors
+            - lastRunUnix
             - namespace
             - ok
             - runDuration
