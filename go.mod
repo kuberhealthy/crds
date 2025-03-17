@@ -1,4 +1,4 @@
-module github.com/kuberhealthy/crds
+module github.com/kuberhealthy/crds/v2
 
 go 1.22.0
 
