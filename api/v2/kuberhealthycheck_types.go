@@ -41,13 +41,13 @@ type KuberhealthyCheckSpec struct {
 type KuberhealthyCheckStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
-	OK                 bool     `json:"ok"`
-	Errors             []string `json:"errors"`
-	RunDuration        string   `json:"runDuration"`
-	Namespace          string   `json:"namespace"`
-	CurrentUUID        string   `json:"currentUUID"`
-	LastRunUnix        int64    `json:"lastRunUnix"`
-	AdditionalMetadata string   `json:"additionalMetadata"`
+	OK                 bool     `json:"ok,omitempty"`
+	Errors             []string `json:"errors,omitempty"`
+	RunDuration        string   `json:"runDuration,omitempty"`
+	Namespace          string   `json:"namespace,omitempty"`
+	CurrentUUID        string   `json:"currentUUID,omitempty"`
+	LastRunUnix        int64    `json:"lastRunUnix,omitempty"`
+	AdditionalMetadata string   `json:"additionalMetadata,omitempty"`
 }
 
 // +kubebuilder:object:root=true
