@@ -31,8 +31,7 @@ type KuberhealthyCheckSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of KuberhealthyCheck. Edit kuberhealthycheck_types.go to remove/update
-	Name      string `json:"name"`
-	SingleRun bool   `json:"singleRunOnly,omitempty"`
+	SingleRun bool `json:"singleRunOnly,omitempty"`
 	//PodSpec   v1.PodSpec              `json:"podSpec"`
 	PodSpec apiextensionsv1.JSON    `json:"podSpec,omitempty"`
 	Status  KuberhealthyCheckStatus `json:"status"`
