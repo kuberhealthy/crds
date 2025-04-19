@@ -51,8 +51,7 @@ type KuberhealthyCheckStatus struct {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:shortName=khc
-// +kubebuilder:resource:shortName=khcheck
+// +kubebuilder:resource:scope=Namespaced,shortName=khc;khcheck;kuberhealthycheck
 
 // KuberhealthyCheck is the Schema for the kuberhealthychecks API
 type KuberhealthyCheck struct {

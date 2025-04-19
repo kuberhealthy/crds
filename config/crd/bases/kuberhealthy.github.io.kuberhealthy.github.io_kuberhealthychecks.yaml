@@ -13,6 +13,8 @@ spec:
     plural: kuberhealthychecks
     shortNames:
     - khc
+    - khcheck
+    - kuberhealthycheck
     singular: kuberhealthycheck
   scope: Namespaced
   versions:
