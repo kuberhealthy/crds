@@ -43,19 +43,19 @@ type KuberhealthyCheckStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 	// OK indicates if this check is currently throwing an error or not.
-	OK *bool `json:"ok,omitempty"`
+	OK bool `json:"ok,omitempty"`
 	// Errors holds a slice of error messages from the check results.
-	Errors *[]string `json:"errors,omitempty"`
+	Errors []string `json:"errors,omitempty"`
 	// LastRunDuration is the execution time that the checker pod took to execute.
-	LastRunDuration *string `json:"runDuration,omitempty"`
+	LastRunDuration string `json:"runDuration,omitempty"`
 	// Namespace is the Kubernetes namespace this pod ran in.
-	Namespace *string `json:"namespace,omitempty"`
+	Namespace string `json:"namespace,omitempty"`
 	// CurrentUUID is used to ensure only the most recent checker pod reports a status for this check.
-	CurrentUUID *string `json:"currentUUID,omitempty"`
+	CurrentUUID string `json:"currentUUID,omitempty"`
 	// LastRunUnix is the last time that this check was scheduled to run.
-	LastRunUnix *int64 `json:"lastRunUnix,omitempty"`
+	LastRunUnix int64 `json:"lastRunUnix,omitempty"`
 	// AdditionalMetadata is used to store additional metadata bout this check that appears in the JSON status.
-	AdditionalMetadata *string `json:"additionalMetadata,omitempty"`
+	AdditionalMetadata string `json:"additionalMetadata,omitempty"`
 }
 
 // +kubebuilder:object:root=true
