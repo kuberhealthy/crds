@@ -19,6 +19,8 @@ package v2
 import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	apiextensionsv1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
+
 )
 
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
@@ -33,7 +35,8 @@ type KuberhealthyCheckSpec struct {
 	// Foo is an example field of KuberhealthyCheck. Edit kuberhealthycheck_types.go to remove/update
 	Name      string                  `json:"name"`
 	SingleRun bool                    `json:"singleRunOnly,omitempty"`
-	PodSpec   v1.PodSpec              `json:"podSpec"`
+	//PodSpec   v1.PodSpec              `json:"podSpec"`
+	PodSpec apiextensionsv1.JSON `json:"podSpec,omitempty"`
 	Status    KuberhealthyCheckStatus `json:"status"`
 }
 
