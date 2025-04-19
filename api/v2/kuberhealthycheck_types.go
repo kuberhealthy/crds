@@ -42,7 +42,6 @@ type KuberhealthyCheckStatus struct {
 	// Important: Run "make" to regenerate code after modifying this file
 	OK                 bool     `json:"ok"`
 	Errors             []string `json:"errors"`
-	CurrentMaster      string   `json:"currentMaster"`
 	RunDuration        string   `json:"runDuration"`
 	Namespace          string   `json:"namespace"`
 	CurrentUUID        string   `json:"currentUUID"`
@@ -52,6 +51,8 @@ type KuberhealthyCheckStatus struct {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:resource:shortName=khc
+// +kubebuilder:resource:shortName=khcheck
 
 // KuberhealthyCheck is the Schema for the kuberhealthychecks API
 type KuberhealthyCheck struct {
