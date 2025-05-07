@@ -35,7 +35,6 @@ type KuberhealthyCheckSpec struct {
 	// PodSpec is a corev1.PodSpec from the Kubernetes documentation: https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/
 	PodSpec apiextensionsv1.JSON `json:"podSpec,omitempty"`
 	// PodSpec   v1.PodSpec              `json:"podSpec"` // Throws error about too much yaml in the CRD definition
-	Status KuberhealthyCheckStatus `json:"status"`
 }
 
 // KuberhealthyCheckStatus defines the observed state of KuberhealthyCheck
@@ -67,7 +66,8 @@ type KuberhealthyCheck struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Spec   KuberhealthyCheckSpec   `json:"spec,omitempty"`
+	Spec KuberhealthyCheckSpec `json:"spec,omitempty"`
+	// +optional
 	Status KuberhealthyCheckStatus `json:"status,omitempty"`
 }
 

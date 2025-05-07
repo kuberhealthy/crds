@@ -51,46 +51,6 @@ spec:
                 description: SingleRun indicates that this KuberhealthyCheck will
                   run only once.
                 type: boolean
-              status:
-                description: PodSpec   v1.PodSpec              `json:"podSpec"` //
-                  Throws error about too much yaml in the CRD definition
-                properties:
-                  additionalMetadata:
-                    description: AdditionalMetadata is used to store additional metadata
-                      bout this check that appears in the JSON status.
-                    type: string
-                  currentUUID:
-                    description: CurrentUUID is used to ensure only the most recent
-                      checker pod reports a status for this check.
-                    type: string
-                  errors:
-                    description: Errors holds a slice of error messages from the check
-                      results.
-                    items:
-                      type: string
-                    type: array
-                  lastRunUnix:
-                    description: LastRunUnix is the last time that this check was
-                      scheduled to run.
-                    format: int64
-                    type: integer
-                  namespace:
-                    description: Namespace is the Kubernetes namespace this pod ran
-                      in.
-                    type: string
-                  ok:
-                    description: |-
-                      INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-                      Important: Run "make" to regenerate code after modifying this file
-                      OK indicates if this check is currently throwing an error or not.
-                    type: boolean
-                  runDuration:
-                    description: LastRunDuration is the execution time that the checker
-                      pod took to execute.
-                    type: string
-                type: object
-            required:
-            - status
             type: object
             x-kubernetes-preserve-unknown-fields: true
           status:
