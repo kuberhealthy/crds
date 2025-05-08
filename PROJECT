@@ -15,18 +15,9 @@ resources:
     crdVersion: v1
     namespaced: true
   controller: true
-  domain: kuberhealthy.github.io
-  group: kuberhealthy.github.io
+#  domain: kuberhealthy.github.io # redundant
+  group: kuberhealthy
   kind: KuberhealthyCheck
-  path: github.com/kuberhealthy/crds/api/v2
-  version: v2
-- api:
-    crdVersion: v1
-    namespaced: true
-  controller: true
-  domain: kuberhealthy.github.io
-  group: kuberhealthy.github.io
-  kind: KuberhealthyJob
   path: github.com/kuberhealthy/crds/api/v2
   version: v2
 version: "3"
