@@ -4,6 +4,7 @@
 resources:
 - bases/kuberhealthy.github.io.kuberhealthy.github.io_kuberhealthychecks.yaml
 - bases/kuberhealthy.github.io.kuberhealthy.github.io_kuberhealthyjobs.yaml
+- bases/kuberhealthy.kuberhealthy.github.io_kuberhealthychecks.yaml
 # +kubebuilder:scaffold:crdkustomizeresource
 
 patches:

@@ -24,7 +24,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-	kuberhealthygithubiov2 "github.com/kuberhealthy/crds/api/v2"
+	kuberhealthyv2 "github.com/kuberhealthy/crds/api/v2"
 )
 
 // KuberhealthyCheckReconciler reconciles a KuberhealthyCheck object
@@ -33,9 +33,9 @@ type KuberhealthyCheckReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-// +kubebuilder:rbac:groups=kuberhealthy.github.io.kuberhealthy.github.io,resources=kuberhealthychecks,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=kuberhealthy.github.io.kuberhealthy.github.io,resources=kuberhealthychecks/status,verbs=get;update;patch
-// +kubebuilder:rbac:groups=kuberhealthy.github.io.kuberhealthy.github.io,resources=kuberhealthychecks/finalizers,verbs=update
+// +kubebuilder:rbac:groups=kuberhealthy.kuberhealthy.github.io,resources=kuberhealthychecks,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:groups=kuberhealthy.kuberhealthy.github.io,resources=kuberhealthychecks/status,verbs=get;update;patch
+// +kubebuilder:rbac:groups=kuberhealthy.kuberhealthy.github.io,resources=kuberhealthychecks/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
@@ -57,6 +57,6 @@ func (r *KuberhealthyCheckReconciler) Reconcile(ctx context.Context, req ctrl.Re
 // SetupWithManager sets up the controller with the Manager.
 func (r *KuberhealthyCheckReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
-		For(&kuberhealthygithubiov2.KuberhealthyCheck{}).
+		For(&kuberhealthyv2.KuberhealthyCheck{}).
 		Complete(r)
 }

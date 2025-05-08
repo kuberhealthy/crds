@@ -36,6 +36,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 
 	kuberhealthygithubiov2 "github.com/kuberhealthy/crds/api/v2"
+	kuberhealthyv2 "github.com/kuberhealthy/crds/api/v2"
 	"github.com/kuberhealthy/crds/internal/controller"
 	// +kubebuilder:scaffold:imports
 )
@@ -49,6 +50,7 @@ func init() {
 	utilruntime.Must(clientgoscheme.AddToScheme(scheme))
 
 	utilruntime.Must(kuberhealthygithubiov2.AddToScheme(scheme))
+	utilruntime.Must(kuberhealthyv2.AddToScheme(scheme))
 	// +kubebuilder:scaffold:scheme
 }
 

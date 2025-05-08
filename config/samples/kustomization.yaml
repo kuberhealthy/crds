@@ -2,4 +2,5 @@
 resources:
 - kuberhealthy.github.io_v4_kuberhealthycheck.yaml
 - kuberhealthy.github.io_v4_kuberhealthyjob.yaml
+- kuberhealthy_v2_kuberhealthycheck.yaml
 # +kubebuilder:scaffold:manifestskustomizesamples
