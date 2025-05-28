@@ -87,7 +87,8 @@ spec:
               runDuration:
                 description: LastRunDuration is the execution time that the checker
                   pod took to execute.
-                type: string
+                format: int64
+                type: integer
             type: object
         type: object
     served: true
