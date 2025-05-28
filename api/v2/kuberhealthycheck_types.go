@@ -19,6 +19,7 @@ package v2
 import (
 	apiextensionsv1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"time"
 )
 
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
@@ -46,7 +47,7 @@ type KuberhealthyCheckStatus struct {
 	// Errors holds a slice of error messages from the check results.
 	Errors []string `json:"errors,omitempty"`
 	// LastRunDuration is the execution time that the checker pod took to execute.
-	LastRunDuration int64 `json:"runDuration,omitempty"`
+	LastRunDuration time.Duration `json:"runDuration,omitempty"`
 	// Namespace is the Kubernetes namespace this pod ran in.
 	Namespace string `json:"namespace,omitempty"`
 	// CurrentUUID is used to ensure only the most recent checker pod reports a status for this check.
