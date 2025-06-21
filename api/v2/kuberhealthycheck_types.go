@@ -17,9 +17,10 @@ limitations under the License.
 package v2
 
 import (
-	apiextensionsv1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"time"
+
+	corev1 "k8s.io/api/core/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
@@ -32,10 +33,9 @@ type KuberhealthyCheckSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// SingleRun indicates that this KuberhealthyCheck will run only once.
-	SingleRun bool `json:"singleRunOnly,omitempty"`
-	// PodSpec is a corev1.PodSpec from the Kubernetes documentation: https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/
-	PodSpec apiextensionsv1.JSON `json:"podSpec,omitempty"`
-	// PodSpec   v1.PodSpec              `json:"podSpec"` // Throws error about too much yaml in the CRD definition
+	SingleRun bool                   `json:"singleRunOnly,omitempty"`
+	PodSpec   corev1.PodTemplateSpec `json:"podSpec,omitempty"`
+	// PodSpec   v1.PodSpec              `json:"podSpec"` // We can not use a full PodSpec struct because it throws error about too much yaml in the CRD definition
 }
 
 // KuberhealthyCheckStatus defines the observed state of KuberhealthyCheck
