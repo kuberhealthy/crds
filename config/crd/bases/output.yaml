@@ -3,9 +3,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.15.0
-  name: kuberhealthychecks.kuberhealthy.github.io.kuberhealthy.github.io
+  name: kuberhealthychecks.kuberhealthy.github.io
 spec:
-  group: kuberhealthy.github.io.kuberhealthy.github.io
+  group: kuberhealthy.github.io
   names:
     kind: KuberhealthyCheck
     listKind: KuberhealthyCheckList

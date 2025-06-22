@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"gopkg.in/yaml.v3"
 	"io"
 	"os"
-	"gopkg.in/yaml.v3"
 )
 
 func removeDescriptions(node *yaml.Node) {
